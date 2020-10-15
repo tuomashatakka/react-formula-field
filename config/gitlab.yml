@@ -1,0 +1,46 @@
+image: node:alpine
+
+before_script:
+  - npm install
+  - export NODE_ENV=production
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script: npm run build
+  only:
+  - master
+  artifacts:
+    paths:
+    - dist
+
+test:
+  stage: test
+  script: npm test
+
+lint:
+  stage: test
+  script: npm run lint
+
+# check:
+# - npm run flow-typed
+# - npm run flow
+
+pages:
+  stage: deploy
+  script: npm run deploy
+  only:
+  - master
+  artifacts:
+    paths:
+    - public
+
+cache:
+  untracked: true
+  paths:
+  - flow-typed/npm/
+  - node_modules/

@@ -1,0 +1,17 @@
+[ignore]
+config/
+node_modules/
+scripts/
+styles/
+build/
+
+[include]
+src/
+
+[libs]
+flow-typed/
+
+[options]
+module.name_mapper='^\([^\\]+?\)$' -> '<PROJECT_ROOT>/src/\1'
+suppress_comment=\\(.\\|\n\\)*\\flow-ignore
+suppress_comment=\\(.\\|\n\\)*\\flow-disable-next-line

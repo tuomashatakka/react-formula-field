@@ -1,0 +1,122 @@
+
+
+
+@text-color: #484848;
+
+
+
+@token-text-color:              mix(@text-color, @token-background-color, 75%);
+@token-text-color-active:       mix(@text-color, @token-background-color-active, 50%);
+@token-border-color:            darken(@token-background-color, 5%);
+@token-border-color-active:     darken(@token-background-color-active, 5%);
+@token-background-color:        #f0f0f0;
+@token-background-color-active: #f74299;
+
+@token-border-radius:    1px;
+@token-border-width:     0px;
+@token-margin:           1px;
+@token-padding:          0.25em 0.75em;
+@token-height:           2em;
+
+
+
+html {
+  font-size:  10px;
+}
+
+body {
+  font:       300 22px/1.65 'Open Sans', sans-serif;
+  color:      @text-color;
+  margin:     0;
+  padding:    0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin:         0;
+  padding:        0;
+  line-height:    1;
+  font-weight:    100;
+  font-family:    Montserrat;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+header.page {
+  max-width: 80%;
+  padding:   3rem;
+  margin:    0 auto;
+}
+
+main.page {
+  max-width: 80%;
+  padding:   3rem;
+  margin:    0 auto;
+}
+
+header {
+  padding:    1em;
+  text-align: center;
+
+  sub {
+    display: block;
+  }
+}
+
+h3 {
+  font-size:      0.8em;
+  font-weight:    400;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+
+.expression-field {
+  margin:    0;
+  padding:   0;
+  display:   flex;
+  flex-wrap: wrap;
+
+  .token {
+    white-space: pre-wrap;
+    word-break:  break-word;
+    box-sizing:  border-box;
+    display:     inline-block;
+    flex:        0 1 auto;
+    width:       auto;
+    margin:      0;
+    padding:     @token-padding;
+    margin:      0 @token-margin @token-margin 0;
+    min-height:  @token-height;
+    line-height: @token-height - 2 * extract(@token-padding, 1);
+  }
+
+  .token.static {
+    color:            @token-text-color;
+    background-color: @token-background-color;
+    border-radius:    @token-border-radius;
+    border-color:     @token-border-color;
+    border-width:     @token-border-width;
+    border-style:     solid;
+  }
+
+  .token.active {
+    color:            @token-text-color-active;
+    background-color: @token-background-color-active;
+    border-color:     @token-border-color-active;
+  }
+
+}
+
+
+
+input,
+select,
+textarea {
+  all:        inherit;
+  width: auto;
+  flex: 0 1 auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}

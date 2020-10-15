@@ -1,0 +1,24 @@
+
+# Dependencies
+/node_modules
+/flow-typed/npm
+/libs/schema
+
+
+# Testing
+.chrome/
+
+
+# Auto-generated
+/coverage
+/reports
+/dist
+/public
+/docs/*!(.md)
+
+
+# Miscellaneous
+*-debug.log*
+*-error.log*
+.DS_Store
+.env
